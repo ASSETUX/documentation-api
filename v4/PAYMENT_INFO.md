@@ -21,6 +21,23 @@ This is the object :
 }
 ```
 
+## Customer
+Customer, this is the data from the Card Holder. This field is required for such currencies as: EUR, USD.
+Transmitted in the format:
+```json
+{
+  "customer": {
+    "firstName": "FIRST",
+    "lastName": "LAST"
+  }
+}
+```
+
+## Language
+Supported language:
+* ru
+* en
+
 ## Check card
 The card is checked by bin number.
 

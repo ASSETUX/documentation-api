@@ -148,6 +148,8 @@ signature - encrypted data to check if the request body matches the sent data.
 | `amount` | `number` | `Sum payment`
 | `id` | `number` | `Payment id`
 | `txnId` | `string` | `Transaction's client ID (assigned on the client device)`
+| `currency` | `string` | `Currency of the made payment`
+| `feeAmount` | `number` | `Payment fee`
 
 ### Response
 Status 200 - OK

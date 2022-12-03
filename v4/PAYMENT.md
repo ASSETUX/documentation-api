@@ -5,6 +5,7 @@
 - [EmailConfig](PAYMENT_INFO.md#email-config)
 - [Lang](PAYMENT_INFO.md#language)
 - [Customer](PAYMENT_INFO.md#customer)
+- [Redirect Link](PAYMENT_INFO.md#redirect-link)
 
 ## Create payment
  - Request Method: POST
@@ -16,10 +17,10 @@
 
 #### Headers
 
-| Name            | Required | Description     
+| Name            | Required | Description
 |-----------------|----------|-----------------
-| assetux-v4-token | √        | Token                 
-| Content-Type    | √        | application/json                 
+| assetux-v4-token | √        | Token
+| Content-Type    | √        | application/json
 
 
 #### Request Payload
@@ -33,14 +34,17 @@
     "currency": string,
     "paymentMethod": PAYMENTMETHOD,
     "creditCard": string,
-    "emailConfig": EmailConfig,
+    "emailConfig"?: EmailConfig,
     "customer": {
       "firstName": string,
       "lastName": string
     },
     "email": string,
     "txnId": string,
-    "lang": string
+    "lang": string,
+    "successLink"?: string,
+    "failureLink"?: string,
+    "returnLink"?: string
 }
 ```
 
@@ -134,7 +138,7 @@ POST: custom url
 ```
 If the response status isn't 200, send a repeat callback after 15 minutes.
 
-signature - encrypted data to check if the request body matches the sent data. 
+signature - encrypted data to check if the request body matches the sent data.
 
 ### Request Parameters
 #### Header
@@ -150,6 +154,9 @@ signature - encrypted data to check if the request body matches the sent data.
 | `txnId` | `string` | `Transaction's client ID (assigned on the client device)`
 | `currency` | `string` | `Currency of the made payment`
 | `feeAmount` | `number` | `Payment fee`
+| `mask` | `string` | `Credit card mask. Mask format - 123456*******789`
+| `meta` | `onject` | `object for meta`
+| `meta.code` | `string` | `Status code of payment`
 
 ### Response
 Status 200 - OK

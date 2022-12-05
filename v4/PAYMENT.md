@@ -6,6 +6,7 @@
 - [Lang](PAYMENT_INFO.md#language)
 - [Customer](PAYMENT_INFO.md#customer)
 - [Redirect Link](PAYMENT_INFO.md#redirect-link)
+- [Status code](PAYMENT_INFO.md#status-code)
 
 ## Create payment
  - Request Method: POST

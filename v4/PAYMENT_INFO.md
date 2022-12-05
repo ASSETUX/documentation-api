@@ -10,7 +10,10 @@ The final link will look like https://assetux.com/api/callback/success?txnId=bf3
 
 txnId, this is the id parameter from the body of the request to create a payment
 
-
+### Status code
+- PAYMENT_CANCELED - Payment has been canceled
+- PAYMENT_SUCCESSFUL - Payment was successful
+- PAYMENT_UNDEFINED - Unidentified error
 
 ### PAYMENTMETHOD
 - QIWI - to pay with a phone number

@@ -149,14 +149,14 @@ signature - encrypted data to check if the request body matches the sent data.
 #### Body
 | Name | Type | Desc |
 | :------ | :------ | :------ |
-| `id` | `number` | `Payment id`
-| `amount` | `number` | `Sum payment`
-| `email` | `string` | `Client email`
-| `txnId` | `string` | `Transaction's client ID (assigned on the client device)`
-| `currency` | `string` | `Currency of the made payment`
-| `feeAmount` | `number` | `Payment fee`
-| `mask` | `string` | `Optional field. Credit card mask. Mask format - 123456*******789`
-| `code` | `string` | `Status code of payment`
+| `data.id` | `number` | `Payment id`
+| `data.amount` | `number` | `Sum payment`
+| `data.email` | `string` | `Client email`
+| `data.txnId` | `string` | `Transaction's client ID (assigned on the client device)`
+| `data.currency` | `string` | `Currency of the made payment`
+| `data.feeAmount` | `number` | `Payment fee`
+| `data.mask` | `string` | `Optional field. Credit card mask. Mask format - 123456*******789`
+| `data.code` | `string` | `Status code of payment`
 
 ### Response
 Status 200 - OK
@@ -182,9 +182,9 @@ signature - encrypted data to check if the request body matches the sent data.
 #### Body
 | Name | Type | Desc |
 | :------ | :------ | :------ |
-| `id` | `number` | `Payment id`
-| `txnId` | `string` | `Transaction's client ID (assigned on the client device)`
-| `code` | `string` | `Status code of payment`
+| `data.id` | `number` | `Payment id`
+| `data.txnId` | `string` | `Transaction's client ID (assigned on the client device)`
+| `data.code` | `string` | `Status code of payment`
 
 ### Response
 Status 200 - OK

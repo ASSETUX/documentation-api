@@ -131,7 +131,7 @@
 }
 ```
 
-## CallBack
+## Successful CallBack
 Callback url set manually, via ASSETUX support (telegram, facebook, otc...)
 
 ```
@@ -149,15 +149,42 @@ signature - encrypted data to check if the request body matches the sent data.
 #### Body
 | Name | Type | Desc |
 | :------ | :------ | :------ |
-| `email` | `string` | `Client email`
-| `amount` | `number` | `Sum payment`
 | `id` | `number` | `Payment id`
+| `amount` | `number` | `Sum payment`
+| `email` | `string` | `Client email`
 | `txnId` | `string` | `Transaction's client ID (assigned on the client device)`
 | `currency` | `string` | `Currency of the made payment`
 | `feeAmount` | `number` | `Payment fee`
-| `mask` | `string` | `Credit card mask. Mask format - 123456*******789`
-| `meta` | `onject` | `object for meta`
-| `meta.code` | `string` | `Status code of payment`
+| `mask` | `string` | `Optional field. Credit card mask. Mask format - 123456*******789`
+| `code` | `string` | `Status code of payment`
+
+### Response
+Status 200 - OK
+```
+{}
+```
+
+## Canceled Callback
+Callback url set manually, via ASSETUX support (telegram, facebook, otc...)
+
+```
+POST: custom url
+```
+If the response status isn't 200, send a repeat callback after 15 minutes.
+
+signature - encrypted data to check if the request body matches the sent data.
+
+### Request Parameters
+#### Header
+| Name | Type | Desc |
+| :------ | :------ | :------ |
+| `signature` | `string` | `id:txnId`
+#### Body
+| Name | Type | Desc |
+| :------ | :------ | :------ |
+| `id` | `number` | `Payment id`
+| `txnId` | `string` | `Transaction's client ID (assigned on the client device)`
+| `code` | `string` | `Status code of payment`
 
 ### Response
 Status 200 - OK

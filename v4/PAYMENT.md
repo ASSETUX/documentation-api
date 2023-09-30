@@ -1,13 +1,3 @@
-### FAQ
-- [PAYMENTMETHOD](PAYMENT_INFO.md#paymentmethod)
-- [List of currencies and supported payment methods](PAYMENT_INFO.md#paymentmethod)
-- [Examples of creating an payment in different programming languages](PAYMENT_CREATE_EXAMPLE.md)
-- [EmailConfig](PAYMENT_INFO.md#email-config)
-- [Lang](PAYMENT_INFO.md#language)
-- [Customer](PAYMENT_INFO.md#customer)
-- [Redirect Link](PAYMENT_INFO.md#redirect-link)
-- [Status code](PAYMENT_INFO.md#status-code)
-
 ## Create payment
  - Request Method: POST
  - Request Path: /api/v4/payment/create

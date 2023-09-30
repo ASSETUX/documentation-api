@@ -31,21 +31,13 @@
 
 ```json
 {
-    "amountIn": number,
-    "currency": string,
-    "paymentMethod": PAYMENTMETHOD,
-    "creditCard": string,
-    "emailConfig"?: EmailConfig,
-    "customer": {
-      "firstName": string,
-      "lastName": string
-    },
-    "email": string,
-    "txnId": string,
-    "lang": string,
-    "successLink"?: string,
-    "failureLink"?: string,
-    "returnLink"?: string
+   "tokenAddress": "0x55d398326f99059fF775485246999027B3197955", // Token's address in blockchain
+   "currency": "USD", // Only USD available now
+   "amount": 1200, // Amount of USD
+   "chainId": 56, // Token's chain ID
+   "cryptoAddress": "0xdeadbeef", // Your wallet's public address
+   "email": "test@test.com", // Your email
+   "method": "VISAMASTER" // Only VISAMASTER available now
 }
 ```
 
@@ -61,11 +53,24 @@
 {
     "success": true,
     "data": {
-        "id": "acb63380-fba7-480d-a5d9-57acdc9afa61",
-        "emailToMerchant": true,
-        "emailToClient": true,
-        "linkToPayment": "https://payment.whitebit.com/hpp/cgi_a3IcgIId3xaxnnt",
-        "txnId": "s5412fz471f3vs1f27v1f357"
+        fiat: "USD";
+        amountFiat: number;
+        amountCrypto: number;
+        status: StatusEcommercePayment;      // ['CREATED' | 'PENDING' | 'EXPIRED' | 'COMPLETE' | 'ERROR']
+        chainId: number;
+        url: string;                         // payment link
+        cryptoAddress: string;
+        email: string;
+        rate: number;
+        paymentData: {
+            ...;
+        };
+        user: {
+            ...;
+        };
+        token: {
+            ...;
+        };
     }
 }
 ```
@@ -130,6 +135,19 @@
     }
 }
 ```
+#### 5. Incorrect API KEY
+
+ - Status Code: 403 Forbidden
+ - Content-Type: application/json; charset=utf-8
+
+```json
+{
+    "success": false,
+    "data": {
+        "message": "Forbidden Incorrect API key"
+    }
+}
+```
 
 ## Successful CallBack
 Callback url set manually, via ASSETUX support (telegram, facebook, otc...)
@@ -150,13 +168,9 @@ signature - encrypted data to check if the request body matches the sent data.
 | Name | Type | Desc |
 | :------ | :------ | :------ |
 | `data.id` | `number` | `Payment id`
-| `data.amount` | `number` | `Sum payment`
-| `data.email` | `string` | `Client email`
-| `data.txnId` | `string` | `Transaction's client ID (assigned on the client device)`
+| `data.amountFiat` | `number` | `Sum payment`
+| `data.amountCrypto` | `number` | `Amount of crypto`
 | `data.currency` | `string` | `Currency of the made payment`
-| `data.feeAmount` | `number` | `Payment fee`
-| `data.mask` | `string` | `Optional field. Credit card mask. Mask format - 123456*******789`
-| `data.code` | `string` | `Status code of payment`
 
 ### Response
 Status 200 - OK

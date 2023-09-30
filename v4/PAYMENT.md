@@ -56,7 +56,7 @@
         "fiat": "USD",
         "amountFiat": 1200,
         "amountCrypto": 1190,
-        "status": 'CREATED',
+        "status": "CREATED",
         "chainId": 56,
         "url": "https://payment.link/",
         "cryptoAddress": "0xdeadbeef",

@@ -53,24 +53,24 @@
 {
     "success": true,
     "data": {
-        fiat: "USD";
-        amountFiat: number;
-        amountCrypto: number;
-        status: StatusEcommercePayment;      // ['CREATED' | 'PENDING' | 'EXPIRED' | 'COMPLETE' | 'ERROR']
-        chainId: number;
-        url: string;                         // payment link
-        cryptoAddress: string;
-        email: string;
-        rate: number;
-        paymentData: {
-            ...;
-        };
-        user: {
-            ...;
-        };
-        token: {
-            ...;
-        };
+        "fiat": "USD",
+        "amountFiat": 1200,
+        "amountCrypto": 1190,
+        "status": 'CREATED',
+        "chainId": 56,
+        "url": "https://payment.link/",
+        "cryptoAddress": "0xdeadbeef",
+        "email": "test@test.com",
+        "rate": null,
+        "paymentData": {
+            ...
+        },
+        "user": {
+            ...
+        },
+        "token": {
+            ...
+        }
     }
 }
 ```

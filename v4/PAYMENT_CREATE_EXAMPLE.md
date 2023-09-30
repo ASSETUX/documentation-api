@@ -13,14 +13,7 @@ func main() {
 
 	url := "https://bsc.assetux.com/api/ecommerce/payment"
 
-	payload := strings.NewReader("{\n
-		\"tokenAddress\": \"0x55d398326f99059fF775485246999027B3197955 \",\n
-		\"currency\": \"USD\",\n
-		\"amount\": 1200,\n
-		\"chainId\": 56,\n
-		\"cryptoAddress\": \"0x970609bA2C160a1b491b90867681918BDc9773aF \",\n
-		\"email\": \"support@assetux.com\",\n
-		\"method\": \"VISAMASTER\",\n ")
+	payload := strings.NewReader("{\n \"tokenAddress\": \"0x55d398326f99059fF775485246999027B3197955 \",\n \"currency\": \"USD\",\n \"amount\": 1200,\n \"chainId\": 56,\n \"cryptoAddress\": \"0x970609bA2C160a1b491b90867681918BDc9773aF \",\n \"email\": \"support@assetux.com\",\n \"method\": \"VISAMASTER\",\n ")
 
 	req, _ := http.NewRequest("POST", url, payload)
 

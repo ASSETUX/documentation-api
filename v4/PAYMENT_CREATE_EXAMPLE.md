@@ -89,7 +89,7 @@ print(response.text)
 curl -XPOST 'https://bsc.assetux.com/api/ecommerce/payment' \
      -H 'assetux-v4-token: RYXwLOxxkKIYb165ZPEebSmJhO6RP1ni' \
      -H 'Content-Type: application/json' \
-     -d '{"amountIn":500,"currency":"KZT","paymentMethod":"QIWIVISAMASTER","creditCard":"2200220022002200","email":"support@assetux.com","lang":"en"}' \
+     -d '{"tokenAddress": "0x55d398326f99059fF775485246999027B3197955 ", "currency": "USD", "amount": 1200, "chainId": 56, "cryptoAddress": "0x970609bA2C160a1b491b90867681918BDc9773aF", "email": "test@test.com", "method": "VISAMASTER"}' \
      --compressed
 ```
 

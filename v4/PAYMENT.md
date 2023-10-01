@@ -54,12 +54,6 @@
         "rate": null,
         "paymentData": {
             ...
-        },
-        "user": {
-            ...
-        },
-        "token": {
-            ...
         }
     }
 }

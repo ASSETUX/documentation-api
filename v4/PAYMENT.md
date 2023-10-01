@@ -64,68 +64,8 @@
     }
 }
 ```
-#### 2. Check Card.
 
- - Status Code: 400 Bad Request
- - Content-Type: application/json; charset=utf-8
-
-
-```json
-{
-    "success": false,
-    "data": {
-        "message": "Invalid parameter for creditCard Specified bin not found"
-    }
-}
-```
-
-#### 2. Check Card.
-
- - Status Code: 400 Bad Request
- - Content-Type: application/json; charset=utf-8
-
-
-```json
-{
-    "success": false,
-    "data": {
-        "message": {
-            "type": "MASTERCARD"
-        }
-    }
-}
-```
-
-#### 3. Wrong payment amount
-
- - Status Code: 400 Bad Request
- - Content-Type: application/json; charset=utf-8
-
-
-```json
-{
-    "success": false,
-    "data": {
-        "message": "Invalid amount"
-    }
-}
-```
-
-#### 4. Incorrect token.
-
- - Status Code: 401 Unauthorized
- - Content-Type: application/json; charset=utf-8
-
-
-```json
-{
-    "success": false,
-    "data": {
-        "message": "Dont valid token"
-    }
-}
-```
-#### 5. Incorrect API KEY
+#### 2. Incorrect API KEY
 
  - Status Code: 403 Forbidden
  - Content-Type: application/json; charset=utf-8

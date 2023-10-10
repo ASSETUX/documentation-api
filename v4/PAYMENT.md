@@ -1,6 +1,6 @@
 ## Create payment
  - Request Method: POST
- - Request Path: /api/ecommerce/payment/
+ - Request Path: /ecommerce/payment/
 
 ### Request Description
 
